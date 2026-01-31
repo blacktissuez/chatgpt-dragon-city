@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skyfire Dragon City</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="world">
+      <header class="hud">
+        <div class="hud__level">
+          <div class="level-ring">
+            <span class="level-ring__value">31</span>
+          </div>
+          <div class="level-meta">
+            <p class="level-meta__title">Skyfire Dragon City</p>
+            <p class="level-meta__subtitle">Floating Isles • Player Home</p>
+          </div>
+        </div>
+        <div class="hud__resources">
+          <div class="resource-pill">
+            <span class="resource-pill__icon">🪙</span>
+            <div>
+              <p class="resource-pill__value" id="coins">500</p>
+              <p class="resource-pill__label">Gold</p>
+            </div>
+            <button class="resource-pill__add" aria-label="Add gold">+</button>
+          </div>
+          <div class="resource-pill">
+            <span class="resource-pill__icon">🌿</span>
+            <div>
+              <p class="resource-pill__value" id="food">120</p>
+              <p class="resource-pill__label">Food</p>
+            </div>
+            <button class="resource-pill__add" aria-label="Add food">+</button>
+          </div>
+          <div class="resource-pill">
+            <span class="resource-pill__icon">💎</span>
+            <div>
+              <p class="resource-pill__value" id="gems">12</p>
+              <p class="resource-pill__label">Gems</p>
+            </div>
+            <button class="resource-pill__add" aria-label="Add gems">+</button>
+          </div>
+        </div>
+        <div class="hud__actions">
+          <button class="gear" aria-label="Settings">⚙️</button>
+        </div>
+      </header>
+
+      <aside class="side-actions">
+        <button class="side-actions__button">Goals</button>
+        <button class="side-actions__button">Events</button>
+        <button class="side-actions__button">Map</button>
+      </aside>
+
+      <main class="island" aria-label="Dragon city map">
+        <div class="island__skyline">
+          <div class="crystal-spire">
+            <span>✨</span>
+            <p>Portal Mountain</p>
+          </div>
+          <div class="village">
+            <div class="village__roof">🏠</div>
+            <div class="village__roof">🏠</div>
+            <div class="village__roof">🏠</div>
+          </div>
+        </div>
+
+        <div class="island__path">
+          <div class="tile tile--lake">
+            <p>Azure Lake</p>
+            <span class="tile__dragon">🐲</span>
+          </div>
+          <div class="tile tile--garden">
+            <p>Blossom Grove</p>
+            <span class="tile__dragon">🌸</span>
+          </div>
+          <div class="tile tile--lava">
+            <p>Flame Cradle</p>
+            <span class="tile__dragon">🔥</span>
+          </div>
+          <div class="tile tile--sanctum">
+            <p>Ancient Sanctum</p>
+            <span class="tile__dragon">🏰</span>
+          </div>
+        </div>
+
+        <div class="island__creatures">
+          <div class="dragon-card">
+            <p class="dragon-card__title">Training Academy</p>
+            <p class="dragon-card__meta">Feed dragons to level up.</p>
+            <div class="dragon-card__body" id="academy"></div>
+            <button class="chip" id="buy-food">Grow Food</button>
+          </div>
+          <div class="dragon-card">
+            <p class="dragon-card__title">Hatchery</p>
+            <p class="dragon-card__meta">Incubate eggs for new dragons.</p>
+            <div class="dragon-card__body" id="hatchery"></div>
+            <button class="chip chip--primary" id="buy-egg">Buy Egg</button>
+          </div>
+          <div class="dragon-card">
+            <p class="dragon-card__title">Breeding Cave</p>
+            <p class="dragon-card__meta">Pair dragons to discover hybrids.</p>
+            <div class="dragon-card__body" id="breeding"></div>
+            <button class="chip chip--primary" id="breed-button">Start</button>
+          </div>
+          <div class="dragon-card">
+            <p class="dragon-card__title">Habitats</p>
+            <p class="dragon-card__meta">Assign dragons to earn gold.</p>
+            <div class="dragon-card__body" id="habitats"></div>
+            <button class="chip" id="collect-all">Collect All</button>
+          </div>
+        </div>
+      </main>
+
+      <aside class="quest-panel">
+        <h3>Daily Quests</h3>
+        <ul class="quests" id="quests"></ul>
+        <div class="quest-panel__tips">
+          <h4>Tips</h4>
+          <ul>
+            <li>Collect gold to unlock new habitats.</li>
+            <li>Feed dragons to increase output.</li>
+            <li>Breed for rare hybrid eggs.</li>
+          </ul>
+        </div>
+      </aside>
+
+      <footer class="bottom-bar">
+        <button class="bottom-bar__button">Social</button>
+        <button class="bottom-bar__button">Storage</button>
+        <button class="bottom-bar__button">Battle</button>
+        <button class="bottom-bar__button">Cards</button>
+        <button class="bottom-bar__button">Shop</button>
+      </footer>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="game.js"></script>
+  </body>
+</html>
