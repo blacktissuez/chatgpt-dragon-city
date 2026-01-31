@@ -13,94 +13,134 @@
     />
   </head>
   <body>
-    <div class="app">
-      <header class="topbar">
-        <div class="brand">
-          <span class="brand__icon">🐉</span>
-          <div>
-            <p class="brand__title">Skyfire Dragon City</p>
-            <p class="brand__subtitle">Raise, train, and reign over the floating isles.</p>
+    <div class="world">
+      <header class="hud">
+        <div class="hud__level">
+          <div class="level-ring">
+            <span class="level-ring__value">31</span>
+          </div>
+          <div class="level-meta">
+            <p class="level-meta__title">Skyfire Dragon City</p>
+            <p class="level-meta__subtitle">Floating Isles • Player Home</p>
           </div>
         </div>
-        <div class="resources">
-          <div class="resource">
-            <span>🪙</span>
-            <strong id="coins">500</strong>
-            <small>Coins</small>
+        <div class="hud__resources">
+          <div class="resource-pill">
+            <span class="resource-pill__icon">🪙</span>
+            <div>
+              <p class="resource-pill__value" id="coins">500</p>
+              <p class="resource-pill__label">Gold</p>
+            </div>
+            <button class="resource-pill__add" aria-label="Add gold">+</button>
           </div>
-          <div class="resource">
-            <span>🌿</span>
-            <strong id="food">120</strong>
-            <small>Food</small>
+          <div class="resource-pill">
+            <span class="resource-pill__icon">🌿</span>
+            <div>
+              <p class="resource-pill__value" id="food">120</p>
+              <p class="resource-pill__label">Food</p>
+            </div>
+            <button class="resource-pill__add" aria-label="Add food">+</button>
           </div>
-          <div class="resource">
-            <span>💎</span>
-            <strong id="gems">12</strong>
-            <small>Gems</small>
+          <div class="resource-pill">
+            <span class="resource-pill__icon">💎</span>
+            <div>
+              <p class="resource-pill__value" id="gems">12</p>
+              <p class="resource-pill__label">Gems</p>
+            </div>
+            <button class="resource-pill__add" aria-label="Add gems">+</button>
           </div>
+        </div>
+        <div class="hud__actions">
+          <button class="gear" aria-label="Settings">⚙️</button>
         </div>
       </header>
 
-      <main class="layout">
-        <section class="panel" aria-labelledby="hatchery-title">
-          <div class="panel__header">
-            <div>
-              <h2 id="hatchery-title">Hatchery</h2>
-              <p>Incubate eggs, hatch new dragons, and expand your roster.</p>
-            </div>
-            <button class="primary" id="buy-egg">Buy Egg (200 🪙)</button>
-          </div>
-          <div class="hatchery" id="hatchery"></div>
-        </section>
+      <aside class="side-actions">
+        <button class="side-actions__button">Goals</button>
+        <button class="side-actions__button">Events</button>
+        <button class="side-actions__button">Map</button>
+      </aside>
 
-        <section class="panel" aria-labelledby="habitats-title">
-          <div class="panel__header">
-            <div>
-              <h2 id="habitats-title">Habitats</h2>
-              <p>Assign dragons to habitats to earn coins over time.</p>
-            </div>
-            <button class="secondary" id="collect-all">Collect All</button>
+      <main class="island" aria-label="Dragon city map">
+        <div class="island__skyline">
+          <div class="crystal-spire">
+            <span>✨</span>
+            <p>Portal Mountain</p>
           </div>
-          <div class="habitats" id="habitats"></div>
-        </section>
+          <div class="village">
+            <div class="village__roof">🏠</div>
+            <div class="village__roof">🏠</div>
+            <div class="village__roof">🏠</div>
+          </div>
+        </div>
 
-        <section class="panel" aria-labelledby="academy-title">
-          <div class="panel__header">
-            <div>
-              <h2 id="academy-title">Training Academy</h2>
-              <p>Feed dragons to level them up and unlock abilities.</p>
-            </div>
-            <button class="secondary" id="buy-food">Grow Food (50 🪙)</button>
+        <div class="island__path">
+          <div class="tile tile--lake">
+            <p>Azure Lake</p>
+            <span class="tile__dragon">🐲</span>
           </div>
-          <div class="academy" id="academy"></div>
-        </section>
+          <div class="tile tile--garden">
+            <p>Blossom Grove</p>
+            <span class="tile__dragon">🌸</span>
+          </div>
+          <div class="tile tile--lava">
+            <p>Flame Cradle</p>
+            <span class="tile__dragon">🔥</span>
+          </div>
+          <div class="tile tile--sanctum">
+            <p>Ancient Sanctum</p>
+            <span class="tile__dragon">🏰</span>
+          </div>
+        </div>
 
-        <section class="panel" aria-labelledby="breeding-title">
-          <div class="panel__header">
-            <div>
-              <h2 id="breeding-title">Breeding Cave</h2>
-              <p>Pair two dragons to discover rare hybrids.</p>
-            </div>
-            <button class="primary" id="breed-button">Start Breeding</button>
+        <div class="island__creatures">
+          <div class="dragon-card">
+            <p class="dragon-card__title">Training Academy</p>
+            <p class="dragon-card__meta">Feed dragons to level up.</p>
+            <div class="dragon-card__body" id="academy"></div>
+            <button class="chip" id="buy-food">Grow Food</button>
           </div>
-          <div class="breeding" id="breeding"></div>
-        </section>
+          <div class="dragon-card">
+            <p class="dragon-card__title">Hatchery</p>
+            <p class="dragon-card__meta">Incubate eggs for new dragons.</p>
+            <div class="dragon-card__body" id="hatchery"></div>
+            <button class="chip chip--primary" id="buy-egg">Buy Egg</button>
+          </div>
+          <div class="dragon-card">
+            <p class="dragon-card__title">Breeding Cave</p>
+            <p class="dragon-card__meta">Pair dragons to discover hybrids.</p>
+            <div class="dragon-card__body" id="breeding"></div>
+            <button class="chip chip--primary" id="breed-button">Start</button>
+          </div>
+          <div class="dragon-card">
+            <p class="dragon-card__title">Habitats</p>
+            <p class="dragon-card__meta">Assign dragons to earn gold.</p>
+            <div class="dragon-card__body" id="habitats"></div>
+            <button class="chip" id="collect-all">Collect All</button>
+          </div>
+        </div>
       </main>
 
-      <aside class="sidebar">
-        <div class="panel panel--compact" aria-labelledby="quest-title">
-          <h3 id="quest-title">Daily Quests</h3>
-          <ul class="quests" id="quests"></ul>
-        </div>
-        <div class="panel panel--compact" aria-labelledby="tips-title">
-          <h3 id="tips-title">Tips</h3>
-          <ul class="tips">
-            <li>Collect coins regularly to expand habitats.</li>
-            <li>Feed dragons to increase their coin output.</li>
-            <li>Breed dragons to unlock rare elements.</li>
+      <aside class="quest-panel">
+        <h3>Daily Quests</h3>
+        <ul class="quests" id="quests"></ul>
+        <div class="quest-panel__tips">
+          <h4>Tips</h4>
+          <ul>
+            <li>Collect gold to unlock new habitats.</li>
+            <li>Feed dragons to increase output.</li>
+            <li>Breed for rare hybrid eggs.</li>
           </ul>
         </div>
       </aside>
+
+      <footer class="bottom-bar">
+        <button class="bottom-bar__button">Social</button>
+        <button class="bottom-bar__button">Storage</button>
+        <button class="bottom-bar__button">Battle</button>
+        <button class="bottom-bar__button">Cards</button>
+        <button class="bottom-bar__button">Shop</button>
+      </footer>
     </div>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
