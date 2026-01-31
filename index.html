@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skyfire Dragon City</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand__icon">🐉</span>
+          <div>
+            <p class="brand__title">Skyfire Dragon City</p>
+            <p class="brand__subtitle">Raise, train, and reign over the floating isles.</p>
+          </div>
+        </div>
+        <div class="resources">
+          <div class="resource">
+            <span>🪙</span>
+            <strong id="coins">500</strong>
+            <small>Coins</small>
+          </div>
+          <div class="resource">
+            <span>🌿</span>
+            <strong id="food">120</strong>
+            <small>Food</small>
+          </div>
+          <div class="resource">
+            <span>💎</span>
+            <strong id="gems">12</strong>
+            <small>Gems</small>
+          </div>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="panel" aria-labelledby="hatchery-title">
+          <div class="panel__header">
+            <div>
+              <h2 id="hatchery-title">Hatchery</h2>
+              <p>Incubate eggs, hatch new dragons, and expand your roster.</p>
+            </div>
+            <button class="primary" id="buy-egg">Buy Egg (200 🪙)</button>
+          </div>
+          <div class="hatchery" id="hatchery"></div>
+        </section>
+
+        <section class="panel" aria-labelledby="habitats-title">
+          <div class="panel__header">
+            <div>
+              <h2 id="habitats-title">Habitats</h2>
+              <p>Assign dragons to habitats to earn coins over time.</p>
+            </div>
+            <button class="secondary" id="collect-all">Collect All</button>
+          </div>
+          <div class="habitats" id="habitats"></div>
+        </section>
+
+        <section class="panel" aria-labelledby="academy-title">
+          <div class="panel__header">
+            <div>
+              <h2 id="academy-title">Training Academy</h2>
+              <p>Feed dragons to level them up and unlock abilities.</p>
+            </div>
+            <button class="secondary" id="buy-food">Grow Food (50 🪙)</button>
+          </div>
+          <div class="academy" id="academy"></div>
+        </section>
+
+        <section class="panel" aria-labelledby="breeding-title">
+          <div class="panel__header">
+            <div>
+              <h2 id="breeding-title">Breeding Cave</h2>
+              <p>Pair two dragons to discover rare hybrids.</p>
+            </div>
+            <button class="primary" id="breed-button">Start Breeding</button>
+          </div>
+          <div class="breeding" id="breeding"></div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="panel panel--compact" aria-labelledby="quest-title">
+          <h3 id="quest-title">Daily Quests</h3>
+          <ul class="quests" id="quests"></ul>
+        </div>
+        <div class="panel panel--compact" aria-labelledby="tips-title">
+          <h3 id="tips-title">Tips</h3>
+          <ul class="tips">
+            <li>Collect coins regularly to expand habitats.</li>
+            <li>Feed dragons to increase their coin output.</li>
+            <li>Breed dragons to unlock rare elements.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="game.js"></script>
+  </body>
+</html>

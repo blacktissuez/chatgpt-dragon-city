@@ -1,0 +1,262 @@
+:root {
+  color-scheme: light;
+  font-family: "Nunito", system-ui, -apple-system, sans-serif;
+  --sky: #eff6ff;
+  --navy: #0f172a;
+  --ink: #1f2937;
+  --muted: #6b7280;
+  --brand: #6366f1;
+  --brand-dark: #4338ca;
+  --card: #ffffff;
+  --panel-border: #e2e8f0;
+  --success: #16a34a;
+  --warning: #f97316;
+  --shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #f8fafc, var(--sky));
+  color: var(--ink);
+}
+
+.app {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 24px;
+  padding: 24px 32px 48px;
+}
+
+.topbar {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card);
+  border-radius: 18px;
+  padding: 20px 24px;
+  box-shadow: var(--shadow);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand__icon {
+  font-size: 32px;
+}
+
+.brand__title {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.brand__subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.resources {
+  display: flex;
+  gap: 18px;
+}
+
+.resource {
+  display: grid;
+  place-items: center;
+  min-width: 80px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid var(--panel-border);
+}
+
+.resource strong {
+  font-size: 18px;
+}
+
+.resource small {
+  color: var(--muted);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.panel {
+  background: var(--card);
+  border-radius: 18px;
+  border: 1px solid var(--panel-border);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.panel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.panel__header h2 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.panel__header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.panel--compact {
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.panel--compact h3 {
+  margin-top: 0;
+}
+
+.primary,
+.secondary {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary {
+  background: var(--brand);
+  color: white;
+}
+
+.primary:hover {
+  background: var(--brand-dark);
+}
+
+.secondary {
+  background: #e0e7ff;
+  color: var(--brand-dark);
+}
+
+.secondary:hover {
+  background: #c7d2fe;
+}
+
+.hatchery,
+.habitats,
+.academy,
+.breeding {
+  display: grid;
+  gap: 12px;
+}
+
+.card {
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+
+.card__title {
+  font-weight: 700;
+  margin: 0;
+}
+
+.card__meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.card__actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  background: #ecfeff;
+  color: #0f766e;
+}
+
+.progress {
+  height: 8px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  overflow: hidden;
+}
+
+.progress > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #38bdf8, #6366f1);
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #0f172a;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.quests,
+.tips {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  display: grid;
+  gap: 8px;
+}
+
+@media (max-width: 960px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .resources {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
